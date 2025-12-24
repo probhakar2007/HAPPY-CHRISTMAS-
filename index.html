@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Christmas 2025</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Quicksand:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #fccb06;
+            --red: #ff4d4d;
+            --ice: #00f2ff;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            margin: 0;
+            background: #020611 radial-gradient(circle at top, #0c1445 0%, #020611 100%);
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            margin: 0;
+            color: var(--gold);
+            text-shadow: 0 0 30px rgba(252, 203, 6, 0.4);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .count-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--ice);
+            border-radius: 15px;
+            padding: 15px;
+            min-width: 80px;
+        }
+
+        .count-box span {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--ice);
+            font-family: 'Mountains of Christmas';
+        }
+
+        .count-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .joke-wrap {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border-left: 5px solid var(--gold);
+        }
+
+        #joke-text {
+            font-size: 1.4rem;
+            min-height: 80px;
+        }
+
+        .btn-joke {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .gift-section {
+            grid-column: 1 / -1;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gift-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .emoji-big {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+
+        /* --- MODERN FOOTER DESIGN --- */
+        .credit-footer {
+            grid-column: 1 / -1;
+            margin-top: 80px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid var(--glass-border);
+            border-radius: 50px 50px 0 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .credit-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .credit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .credit-label {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .credit-name {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .divider {
+            width: 1px;
+            height: 15px;
+            background: var(--glass-border);
+        }
+
+        @media (max-width: 850px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .credit-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="snow-container"></div>
+
+    <div class="wrapper">
+        <header>
+            <h1>Happy Christmas</h1>
+            <p style="font-size: 1.2rem; opacity: 0.7;">Your Festive 2025 Command Center</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="glass-card">
+                <h2 style="font-family: 'Mountains of Christmas'; color: var(--ice); margin-bottom: 10px;">New Year's
+                    Eve</h2>
+                <div class="counter-container">
+                    <div class="count-box"><span id="d">00</span>
+                        <div class="count-label">Days</div>
+                    </div>
+                    <div class="count-box"><span id="h">00</span>
+                        <div class="count-label">Hours</div>
+                    </div>
+                    <div class="count-box"><span id="m">00</span>
+                        <div class="count-label">Mins</div>
+                    </div>
+                    <div class="count-box"><span id="s">00</span>
+                        <div class="count-label">Secs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h2 style="font-family: 'Mountains of Christmas'; color: var(--gold); margin-bottom: 10px;">Crack a Joke
+                </h2>
+                <div class="joke-wrap">
+                    <p id="joke-text">Why does Santa have three gardens?</p>
+                </div>
+                <button class="btn-joke" onclick="newJoke()">Next Joke 🎭</button>
+            </div>
+
+            <div class="gift-section">
+                <h2 style="font-family: 'Mountains of Christmas'; font-size: 2.5rem;">The Secret Workshop</h2>
+                <div class="gift-grid">
+                    <div class="gift-card"
+                        onclick="openGift(this, '🦖', 'A T-Rex!', 'He can\'t clap because his arms are too short.')">
+                        <span class="emoji-big">🎁</span>
+                        <p>Box of Growling</p>
+                    </div>
+                    <div class="gift-card"
+                        onclick="openGift(this, '🚀', 'A Space Rocket!', 'To send the fruitcake into orbit.')">
+                        <span class="emoji-big">🎁</span>
+                        <p>Box of Speed</p>
+                    </div>
+                    <div class="gift-card"
+                        onclick="openGift(this, '💥', 'Self-Destructing Gift', 'This gift will vanish in 3 seconds!')">
+                        <span class="emoji-big">🎁</span>
+                        <p>Box of Danger</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="credit-footer">
+                <div class="credit-content">
+                    <div class="credit-item">
+                        <span class="credit-label">HTML & CSS BY</span>
+                        <span class="credit-name">PROBHAKAR 🤡</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="credit-item">
+                        <span class="credit-label">SCRIPT BY</span>
+                        <span class="credit-name">AI 🗿</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; opacity: 0.3; font-size: 0.7rem;">© 2025 ALL RIGHTS RESERVED</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const diff = new Date("Jan 1, 2026 00:00:00") - new Date();
+            document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('h').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            document.getElementById('m').innerText = Math.floor((diff / 1000 / 60) % 60);
+            document.getElementById('s').innerText = Math.floor((diff / 1000) % 60);
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        const jokes = [
+            "What did Adam say to his wife on the day before Christmas? 'It's Christmas, Eve!'",
+            "Why did Santa go to music school? Because he wanted to improve his 'wrapping' skills!",
+            "What do you get when you cross a snowman and a vampire? Frostbite!",
+        ];
+        function newJoke() {
+            document.getElementById('joke-text').innerText = jokes[Math.floor(Math.random() * jokes.length)];
+        }
+
+        function openGift(el, emoji, title, desc) {
+            el.innerHTML = `<span class="emoji-big">${emoji}</span><h3>${title}</h3><p>${desc}</p>`;
+            if (emoji === '💥') {
+                setTimeout(() => {
+                    el.style.transform = 'scale(0)';
+                    el.style.opacity = '0';
+                    setTimeout(() => el.remove(), 500);
+                }, 3000);
+            }
+        }
+
+        const snowCont = document.getElementById('snow-container');
+        for (let i = 0; i < 60; i++) {
+            const s = document.createElement('div');
+            s.className = 'snowflake';
+            s.innerHTML = '❄';
+            s.style.left = Math.random() * 100 + 'vw';
+            s.style.fontSize = Math.random() * 15 + 10 + 'px';
+            s.style.animationDuration = Math.random() * 3 + 5 + 's';
+            s.style.opacity = Math.random();
+            snowCont.appendChild(s);
+        }
+        // Disable Right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable Keyboard Shortcuts
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) { // F12
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { // Ctrl+U (View Source)
+                return false;
+            }
+        };
+    </script>
+</body>
+
+</html>
